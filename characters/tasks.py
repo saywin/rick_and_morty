@@ -1,0 +1,10 @@
+import time
+
+from characters.scrapper import sync_characters_wit_api
+
+from celery import shared_task
+
+
+@shared_task
+def run_sync_with_api() -> None:
+    sync_characters_wit_api()
